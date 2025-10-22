@@ -5,7 +5,7 @@ import { Bar, Line, Pie } from "react-chartjs-2";
 // 📦 임의 데이터 생성
 function generateFakeData() {
   const categories = ["도시락", "샌드위치", "음료", "디저트", "즉석식품"];
-  const stores = ["강남점", "경희대점", "홍대점", "부산서면점"];
+  const stores = ["강남", "경희대점", "홍대점", "부산서면점"];
   const rows = [];
 
   for (let i = 0; i < 50; i++) {
