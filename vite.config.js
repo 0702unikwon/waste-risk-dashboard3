@@ -1,8 +1,8 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
+// ✅ base 옵션 꼭 필요!
 export default defineConfig({
-  base: "./", // ✅ 추가: Netlify에서 경로 깨지는 문제 해결
+  base: './',
   plugins: [react()],
-});
+})
