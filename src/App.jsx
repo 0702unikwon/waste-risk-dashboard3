@@ -167,26 +167,13 @@ export default function App() {
       style={{
         backgroundColor: "#F4F6F5",
         minHeight: "100vh",
-        padding: "30px 60px",
+        padding: "20px 40px", // ✅ 살짝 줄여서 여백 자연스럽게
         fontFamily: "Pretendard, sans-serif",
       }}
     >
-      {/* 헤더 */}
-      <div
-        style={{
-          backgroundColor: "#00704A",
-          color: "white",
-          padding: "16px 32px",
-          borderRadius: "12px",
-          marginBottom: "24px",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
-          textAlign: "center",
-        }}
-      >
-        <h1 style={{ margin: 0 }}>7-Eleven 폐기위험도 대시보드</h1>
-      </div>
+      {/* ✅ 헤더 완전 제거 */}
 
-      {/* ✅ 점포 선택 & 데이터 새로고침 한 줄 정렬 */}
+      {/* ✅ 점포 선택 & 데이터 새로고침 */}
       <div
         style={{
           marginBottom: 20,
@@ -195,7 +182,6 @@ export default function App() {
           justifyContent: "space-between",
         }}
       >
-        {/* 왼쪽: 점포 선택 */}
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <label htmlFor="store-select" style={{ fontWeight: "bold" }}>
             점포 선택:
@@ -219,7 +205,6 @@ export default function App() {
           </select>
         </div>
 
-        {/* 오른쪽: 새로고침 버튼 */}
         <button
           onClick={() => setDataKey((prev) => prev + 1)}
           style={{
@@ -237,7 +222,7 @@ export default function App() {
         </button>
       </div>
 
-      {/* 본문 */}
+      {/* ✅ 본문 */}
       <div style={{ display: "flex", gap: "30px" }}>
         {/* 왼쪽 */}
         <div
