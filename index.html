@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <!-- ✅ 모바일 WebView에서 PC 화면 비율 유지 -->
-    <meta
-      name="viewport"
-      content="width=1200, initial-scale=0.28, maximum-scale=0.28, minimum-scale=0.28, user-scalable=no, viewport-fit=cover"
-    />
     <title>폐기위험도 대시보드</title>
+
+    <!-- 🧠 기기 폭에 따라 자동으로 scale 계산 -->
+    <script>
+      (function () {
+        // 기준 너비 (대시보드 설계 기준)
+        const baseWidth = 1200;
+        // 실제 기기 화면 폭(px)
+        const deviceWidth = window.innerWidth;
+        // 비율 계산 (예: 390 / 1200 = 0.325)
+        const scale = deviceWidth / baseWidth;
+
+        const meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content = `
+          width=${baseWidth},
+          initial-scale=${scale},
+          maximum-scale=${scale},
+          minimum-scale=${scale},
+          user-scalable=no,
+          viewport-fit=cover
+        `.replace(/\s+/g, " "); // 공백 제거
+        document.head.appendChild(meta);
+      })();
+    </script>
   </head>
+
   <body style="margin: 0; overflow-x: hidden; background: #f4f6f5">
     <div id="root"></div>
     <script type="module" src="./src/main.jsx"></script>
